@@ -1488,7 +1488,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env service:warp-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
+												"query": "$env service:warp-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
 											},
 											"storage": "hot"
 										}
