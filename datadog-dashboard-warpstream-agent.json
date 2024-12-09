@@ -896,7 +896,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_lag{service:warp-agent} by {virtual_cluster_id,consumer_group,topic}"
+											"query": "avg:warpstream_consumer_group_lag{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -943,7 +943,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{service:warp-agent} by {virtual_cluster_id,consumer_group,topic}"
+											"query": "avg:warpstream_consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -990,7 +990,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_lag{service:warp-agent} by {virtual_cluster_id,consumer_group,topic,partition}"
+											"query": "avg:warpstream_consumer_group_lag{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic,partition}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1037,7 +1037,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{service:warp-agent} by {virtual_cluster_id,consumer_group,topic,partition}"
+											"query": "avg:warpstream_consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic,partition}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1084,7 +1084,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_max_offset{service:warp-agent} by {virtual_cluster_id,consumer_group,topic}"
+											"query": "avg:warpstream_consumer_group_max_offset{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1424,7 +1424,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_run_and_ack_job_outcome{$env, service:warp-agent} by {job_type}.as_count()"
+											"query": "sum:warpstream_agent_run_and_ack_job_outcome{$env, service:warpstream-agent} by {job_type}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -1488,7 +1488,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env service:warp-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
+												"query": "$env service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
 											},
 											"storage": "hot"
 										}
@@ -1562,7 +1562,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env $service service:warp-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
+												"query": "$env $service service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
 											},
 											"storage": "hot"
 										}
@@ -1639,7 +1639,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env service:warp-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
+												"query": "$env service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
 											},
 											"storage": "hot"
 										}
@@ -1870,7 +1870,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env flush_end service:warp-agent"
+												"query": "$env flush_end service:warpstream-agent"
 											},
 											"storage": "hot"
 										},
@@ -1885,7 +1885,7 @@
 											],
 											"name": "query3",
 											"search": {
-												"query": "$env service:warp-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
+												"query": "$env service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
 											},
 											"storage": "hot"
 										}
