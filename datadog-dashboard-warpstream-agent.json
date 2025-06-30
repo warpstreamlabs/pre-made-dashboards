@@ -147,7 +147,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_segment_batcher_flush_file_size_uncompressed_bytes{$env ,$service}.as_rate()"
+											"query": "sum:warpstream.agent_segment_batcher_flush_file_size_uncompressed_bytes{$env ,$service}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -324,7 +324,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_inflight_connections{$env,$service} by {availability-zone}.weighted()"
+											"query": "sum:warpstream.agent_kafka_inflight_connections{$env,$service} by {availability-zone}.weighted()"
 										}
 									],
 									"response_format": "timeseries",
@@ -371,7 +371,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "max:warpstream_agent_kafka_inflight_request_per_connection{$env,$service}"
+											"query": "max:warpstream.agent_kafka_inflight_request_per_connection{$env,$service}"
 										}
 									],
 									"response_format": "timeseries",
@@ -418,7 +418,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_request_outcome{$env,$service} by {availability-zone}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_request_outcome{$env,$service} by {availability-zone}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -465,7 +465,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_request_outcome{$env,$service} by {kafka_key,outcome}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_request_outcome{$env,$service} by {kafka_key,outcome}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -512,7 +512,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_request_outcome{$env,$service} by {host}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_request_outcome{$env,$service} by {host}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -559,7 +559,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_agent_kafka_request_latency{$env,$service,outcome:success} by {kafka_key}"
+											"query": "avg:warpstream.agent_kafka_request_latency{$env,$service,outcome:success} by {kafka_key}"
 										}
 									],
 									"response_format": "timeseries",
@@ -606,7 +606,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_request_outcome{$env,$service,kafka_key:produce} by {host}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_request_outcome{$env,$service,kafka_key:produce} by {host}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -653,7 +653,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "max:warpstream_agent_segment_batcher_flush_num_records_distribution{$env,$service} by {availability-zone}"
+											"query": "max:warpstream.agent_segment_batcher_flush_num_records_distribution{$env,$service} by {availability-zone}"
 										}
 									],
 									"response_format": "timeseries",
@@ -700,7 +700,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_request_outcome{$env,$service,kafka_key:fetch} by {host}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_request_outcome{$env,$service,kafka_key:fetch} by {host}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -747,7 +747,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_fetch_partial_response_error_scenario_num_bytes_distribution{$env} by {source}.as_count()"
+											"query": "sum:warpstream.agent_kafka_fetch_partial_response_error_scenario_num_bytes_distribution{$env} by {source}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -794,7 +794,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "max:warpstream_agent_kafka_fetch_num_pointers_distribution{$env}"
+											"query": "max:warpstream.agent_kafka_fetch_num_pointers_distribution{$env}"
 										}
 									],
 									"response_format": "timeseries",
@@ -844,12 +844,12 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_fast_retrier_execution{name:file_cache_blob_store, $env} by {name}.as_count()"
+											"query": "avg:warpstream.fast_retrier_execution{name:file_cache_blob_store, $env} by {name}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "avg:warpstream_fast_retrier_speculative_retry{name:file_cache_blob_store, $env} by {name}.as_count()"
+											"query": "avg:warpstream.fast_retrier_speculative_retry{name:file_cache_blob_store, $env} by {name}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -896,7 +896,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_lag{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic}"
+											"query": "avg:warpstream.consumer_group_lag{$service, $env} by {virtual_cluster_id,consumer_group,topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -943,7 +943,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic}"
+											"query": "avg:warpstream.consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{$service, $env} by {virtual_cluster_id,consumer_group,topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -990,7 +990,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_lag{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic,partition}"
+											"query": "avg:warpstream.consumer_group_lag{$service, $env} by {virtual_cluster_id,consumer_group,topic,partition}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1037,7 +1037,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic,partition}"
+											"query": "avg:warpstream.consumer_group_estimated_lag_very_coarse_do_not_use_to_measure_e2e_seconds{$service, $env} by {virtual_cluster_id,consumer_group,topic,partition}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1084,7 +1084,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_consumer_group_max_offset{service:warpstream-agent, $env} by {virtual_cluster_id,consumer_group,topic}"
+											"query": "avg:warpstream.consumer_group_max_offset{$service, $env} by {virtual_cluster_id,consumer_group,topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1131,7 +1131,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_agent_kafka_fetch_prefetch_concurrency_distribution{$env, $service}"
+											"query": "avg:warpstream.agent_kafka_fetch_prefetch_concurrency_distribution{$env, $service}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1183,12 +1183,12 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_produce_uncompressed_bytes{$env, $service}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_produce_uncompressed_bytes{$env, $service}.as_rate()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "sum:warpstream_agent_kafka_fetch_uncompressed_bytes{$env, $service}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_fetch_uncompressed_bytes{$env, $service}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -1240,12 +1240,12 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_produce_compressed_bytes{$env, $service}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_produce_compressed_bytes{$env, $service}.as_rate()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "sum:warpstream_agent_kafka_fetch_compressed_bytes{$env, $service}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_fetch_compressed_bytes{$env, $service}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -1297,12 +1297,12 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_produce_uncompressed_bytes{$env, $service} by {topic}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_produce_uncompressed_bytes{$env, $service} by {topic}.as_rate()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "sum:warpstream_agent_kafka_fetch_uncompressed_bytes{$env, $service} by {topic}.as_rate()"
+											"query": "sum:warpstream.agent_kafka_fetch_uncompressed_bytes{$env, $service} by {topic}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -1354,12 +1354,12 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_produce_compressed_bytes{$env, $service} by {topic}.as_count()"
+											"query": "sum:warpstream.agent_kafka_produce_compressed_bytes{$env, $service} by {topic}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "avg:warpstream_agent_kafka_fetch_compressed_bytes{$env, $service} by {topic}"
+											"query": "avg:warpstream.agent_kafka_fetch_compressed_bytes{$env, $service} by {topic}"
 										}
 									],
 									"response_format": "timeseries",
@@ -1424,7 +1424,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_run_and_ack_job_outcome{$env, service:warpstream-agent} by {job_type}.as_count()"
+											"query": "sum:warpstream.agent_run_and_ack_job_outcome{$env, $service} by {job_type}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -1488,7 +1488,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
+												"query": "$env $service @stream_job_input.type:COMPACTION_JOB_TYPE"
 											},
 											"storage": "hot"
 										}
@@ -1562,7 +1562,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env $service service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
+												"query": "$env $service $service @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
 											},
 											"storage": "hot"
 										}
@@ -1639,7 +1639,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
+												"query": "$env $service @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
 											},
 											"storage": "hot"
 										}
@@ -1805,7 +1805,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "sum:warpstream_files_count{*} by {compaction_level}.weighted()"
+											"query": "sum:warpstream.files_count{*} by {compaction_level}.weighted()"
 										}
 									],
 									"response_format": "timeseries",
@@ -1857,7 +1857,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "sum:warpstream_agent_deadscanner_outcomes{$env,outcome:deleted}.as_count()"
+											"query": "sum:warpstream.agent_deadscanner_outcomes{$env,outcome:deleted}.as_count()"
 										},
 										{
 											"compute": {
@@ -1870,7 +1870,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env flush_end service:warpstream-agent"
+												"query": "$env flush_end $service"
 											},
 											"storage": "hot"
 										},
@@ -1885,7 +1885,7 @@
 											],
 											"name": "query3",
 											"search": {
-												"query": "$env service:warpstream-agent @stream_job_input.type:COMPACTION_JOB_TYPE"
+												"query": "$env $service @stream_job_input.type:COMPACTION_JOB_TYPE"
 											},
 											"storage": "hot"
 										}
@@ -1935,7 +1935,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_deadscanner_outcomes{$env} by {outcome,service}.as_count()"
+											"query": "sum:warpstream.agent_deadscanner_outcomes{$env} by {outcome,service}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2000,7 +2000,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_server_get_stream_range_num_bytes_count{$env,$service} by {outcome,host}.as_rate()"
+											"query": "sum:warpstream.agent_file_cache_server_get_stream_range_num_bytes_count{$env,$service} by {outcome,host}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2047,7 +2047,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_client_get_stream_range_outcome{$env ,$service} by {outcome}.as_rate()"
+											"query": "sum:warpstream.agent_file_cache_client_get_stream_range_outcome{$env ,$service} by {outcome}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2094,7 +2094,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_agent_file_cache_client_get_stream_range_latency{$env,$service ,outcome:success} by {outcome}"
+											"query": "avg:warpstream.agent_file_cache_client_get_stream_range_latency{$env,$service ,outcome:success} by {outcome}"
 										}
 									],
 									"response_format": "timeseries",
@@ -2146,22 +2146,22 @@
 										{
 											"data_source": "metrics",
 											"name": "a",
-											"query": "count:warpstream_blob_store_operation_latency{$env , operation:get_stream}.as_rate()"
+											"query": "count:warpstream.blob_store_operation_latency{$env , operation:get_stream}.as_rate()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "count:warpstream_blob_store_operation_latency{$env , operation:get_stream_range}.as_count()"
+											"query": "count:warpstream.blob_store_operation_latency{$env , operation:get_stream_range}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "count:warpstream_blob_store_operation_latency{$env , operation:put_stream}.as_count()"
+											"query": "count:warpstream.blob_store_operation_latency{$env , operation:put_stream}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query3",
-											"query": "count:warpstream_blob_store_operation_latency{$env , operation:put_bytes}.as_count()"
+											"query": "count:warpstream.blob_store_operation_latency{$env , operation:put_bytes}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2206,7 +2206,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_agent_file_cache_server_chunk_cache_curr_size_bytes{$env} by {host}"
+											"query": "avg:warpstream.agent_file_cache_server_chunk_cache_curr_size_bytes{$env} by {host}"
 										}
 									],
 									"response_format": "timeseries",
@@ -2253,7 +2253,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_agent_file_cache_server_get_stream_range_latency{$env,$service,outcome:success} by {outcome,host}"
+											"query": "avg:warpstream.agent_file_cache_server_get_stream_range_latency{$env,$service,outcome:success} by {outcome,host}"
 										}
 									],
 									"response_format": "timeseries",
@@ -2300,7 +2300,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_client_fetch_local_or_remote_counter{$env} by {source}.as_count()"
+											"query": "sum:warpstream.agent_file_cache_client_fetch_local_or_remote_counter{$env} by {source}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2347,7 +2347,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_server_get_stream_range_outcome{$env,$service} by {outcome,host}.as_rate()"
+											"query": "sum:warpstream.agent_file_cache_server_get_stream_range_outcome{$env,$service} by {outcome,host}.as_rate()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2394,12 +2394,12 @@
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "sum:warpstream_agent_file_cache_server_chunk_cache_num_misses{$env} by {host}.as_count()"
+											"query": "sum:warpstream.agent_file_cache_server_chunk_cache_num_misses{$env} by {host}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_server_chunk_cache_num_gets{$env} by {host}.as_count()"
+											"query": "sum:warpstream.agent_file_cache_server_chunk_cache_num_gets{$env} by {host}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2451,17 +2451,17 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "count(v: v<=100000):warpstream_agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome}.as_count()"
+											"query": "count(v: v<=100000):warpstream.agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query2",
-											"query": "count(v: v>500000):warpstream_agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome}.as_count()"
+											"query": "count(v: v>500000):warpstream.agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome}.as_count()"
 										},
 										{
 											"data_source": "metrics",
 											"name": "query3",
-											"query": "count(v: v>3500000):warpstream_agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome}.as_count()"
+											"query": "count(v: v>3500000):warpstream.agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2508,7 +2508,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "max:warpstream_agent_file_cache_server_chunk_cache_num_entries{$env} by {host}"
+											"query": "max:warpstream.agent_file_cache_server_chunk_cache_num_entries{$env} by {host}"
 										}
 									],
 									"response_format": "timeseries",
@@ -2555,7 +2555,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_server_get_range_copy_chunk_num_bytes_copied{$env} by {host}.as_count()"
+											"query": "sum:warpstream.agent_file_cache_server_get_range_copy_chunk_num_bytes_copied{$env} by {host}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2602,7 +2602,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_kafka_fetch_num_pointers_counter{$env}.as_count()"
+											"query": "sum:warpstream.agent_kafka_fetch_num_pointers_counter{$env}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2649,7 +2649,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_server_fetch_size_counter{$env} by {fetch_size}.as_count()"
+											"query": "sum:warpstream.agent_file_cache_server_fetch_size_counter{$env} by {fetch_size}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2696,7 +2696,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "avg:warpstream_agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome,host}"
+											"query": "avg:warpstream.agent_file_cache_server_get_stream_range_num_bytes_distribution{$env,$service,outcome:success} by {outcome,host}"
 										}
 									],
 									"response_format": "timeseries",
@@ -2743,7 +2743,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_file_cache_server_fetch_size_num_bytes_counter{$env} by {fetch_size}.as_count()"
+											"query": "sum:warpstream.agent_file_cache_server_fetch_size_num_bytes_counter{$env} by {fetch_size}.as_count()"
 										}
 									],
 									"response_format": "timeseries",
@@ -2791,7 +2791,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_segment_batcher_flush_file_size_compressed_bytes{*}.as_count().rollup(count)"
+											"query": "sum:warpstream.agent_segment_batcher_flush_file_size_compressed_bytes{*}.as_count().rollup(count)"
 										}
 									],
 									"response_format": "timeseries",
@@ -2839,7 +2839,7 @@
 										{
 											"data_source": "metrics",
 											"name": "query1",
-											"query": "sum:warpstream_agent_segment_batcher_flush_file_size_uncompressed_bytes{*}.as_count().rollup(count)"
+											"query": "sum:warpstream.agent_segment_batcher_flush_file_size_uncompressed_bytes{*}.as_count().rollup(count)"
 										}
 									],
 									"response_format": "timeseries",
