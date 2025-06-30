@@ -1562,7 +1562,7 @@
 											],
 											"name": "query1",
 											"search": {
-												"query": "$env $service $service @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
+												"query": "$env $service @stream_job_input.type:COMPACTION_JOB_TYPE status:info"
 											},
 											"storage": "hot"
 										}
